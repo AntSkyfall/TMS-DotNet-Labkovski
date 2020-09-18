@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace HomeWork2
 {
@@ -22,23 +22,23 @@ namespace HomeWork2
             {
                 Console.WriteLine("The enterred data is incorrected"); // выводится в консоль сообщение о некорректности ввода
                 Console.ReadKey(); // для того что бы консоль не закрылась
-                return; // возвращает куда-то?????
+                return; // заканчивает функцию Main
             }
 
-            var dates = GetDates(); // переменная dates обращается к названию метода GetDates
-            FindAndShowSuitableDates(dates, day); //название метода FindAndShowSuitableDates хранит в себе переменные dates, day
+            var dates = GetDates(); // переменная dates обращается к методу GetDates
+            FindAndShowSuitableDates(dates, day); //метод FindAndShowSuitableDates хранит в себе переменные dates, day
 
-            Console.ReadKey(); // Для чего тут ввод в консоль?? 
+            Console.ReadKey(); // для того что бы консоль не закрылась.
         }
-        private static (bool isCorrect, Week day) InputAndCheckUserData() //создаем булевую переменную isCorrect и Week day и называем все это функцией InputAndCheckUserData
+        private static (bool isCorrect, Week day) InputAndCheckUserData() //создаем булевую переменную isCorrect и Week day и называем все это методом InputAndCheckUserData
         {
             Console.WriteLine("Input Value: "); //просим ввести пользователя значение
             var userImput = Console.ReadLine(); //создаем неизвестную переменную userImput и приравниваем ей то что ввели в консоль
-            return CheckUserImput(userImput); //передаем переменную UserImput в функцию CheckUserImput (Можно ли назвать ее методом?)
+            return CheckUserImput(userImput); //передаем переменную UserImput в метод CheckUserImput
         }
-        private static (bool isCorrect, Week day) CheckUserImput(string userImput)//зачем тут (bool isCorrect, Week day) ???? 
+        private static (bool isCorrect, Week day) CheckUserImput(string userImput)//
         {
-            return userImput switch //возвращает сюда переменную userImput и с помощью оператора switch проверяет корректность ввода, логика работы switch описана ниже
+            return userImput switch //возвращает кортежи bool и Week сверяет стринговый userimput с литералами
             {
                 "Monday" => (true, Week.Monday),
                 "Tuesday" => (true, Week.Tuesday),
@@ -47,31 +47,30 @@ namespace HomeWork2
                 "Friday" => (true, Week.Friday),
                 "Saturday" => (true, Week.Saturday),
                 "Sunday" => (true, Week.Sunday),
-                _ => (false, Week.Unknown), // обязательно нужно использовать нижнее подчеркивание для указания примера некорректного ввода? 
+                _ => (false, Week.Unknown),
             };
         }
-        private static DateTime[] GetDates() //создается функция которая называется GetDates в которую входит библиотека DateTime??
+        private static DateTime[] GetDates() //создается функция которая называется GetDates она возвращает массив DateTime
         {
-            var currentMonth = DateTime.Now.Date.Month;// в переменную неизвестного типа currentMonth, мы помещаем данные из библиотеки DateTime о текущем месяце
-            var currentYear = DateTime.Now.Date.Year;// в переменную неизвестного типа currentYear, мы помещаем данные из библиотеки DateTime о текущем году
-            var daysInMonth = DateTime.DaysInMonth(currentYear, currentMonth);// в переменную неизвестного типа daysInMonth мы помещаем данные функции библиотеки DateTime.DaysInMonth??? 
+            var currentMonth = DateTime.Now.Date.Month;// в переменную неизвестного типа currentMonth, мы помещаем данные из класса DateTime о текущем месяце
+            var currentYear = DateTime.Now.Date.Year;// в переменную неизвестного типа currentYear, мы помещаем данные из класса DateTime о текущем году
+            var daysInMonth = DateTime.DaysInMonth(currentYear, currentMonth);// в переменную неизвестного типа daysInMonth мы помещаем данные о днях в текущем году и месяце
 
-            var dates = new DateTime[31]; //в переменную неизвестного типа date мы помещаем обьект?? (т,е это есть конструктор) как это работает в данном случае?? задаем 31 день?? Как работают квадратные скобки???
-            for (int i = 1; i < daysInMonth + 1; i++) // используем цикл for в котором инициализируем переменную i, приравниваем ей 1, проверяем меньше ли эта еденица дня месяца и прибавляем 1?? зачем инкремент переменной i???
+            var dates = new DateTime[31]; //в переменную dates мы помещаем массив типа DataTime
+            for (int i = 1; i <= daysInMonth; i++) // используем цикл for в котором инициализируем переменную i, приравниваем ей 1, проверяем меньше ли эта еденица дня месяца и прибавляем 1, инкремент i для продвижения по числам
             {
-                dates[i] = new DateTime(currentYear, currentMonth, i); // не понимаю как работают квадратные скобки, создается обьект из перечени переменных currentYear, currentMonth, i и помещается в dates???
-            }
-
-            return dates; // возвращаемся из цикла на 59 строчку кода? 
+                dates[i] = new DateTime(currentYear, currentMonth, i); // заполняем массив dates
+            
+            return dates; //возвращаем массив
         }
 
-        private static void FindAndShowSuitableDates(DateTime[] dates, Week day)
+        private static void FindAndShowSuitableDates(DateTime[] dates, Week day) //создаем метод и указываем его параметры
         {
-            foreach (var date in dates) // foreach получает переменную date и dates (dates уже с данными т.к на 53 строчке когда над ними поработала функиця GetDates???)
+            foreach (var date in dates) //форич перебирает элементы массива dates + создана переменная date
             {
-                if (date != DateTime.MinValue && date.DayOfWeek.ToString() == day.ToString())// если переменная date не равна (DateTime.MinValue?? не совсем понял что это) и date это день недели который есть в библиотеке сверяется с вписанным пользователем днем недели day верна, то выводится в консоль дата??
+                if (date != DateTime.MinValue && date.DayOfWeek.ToString() == day.ToString())// сравнивает элементы массива с вводом пользователя.
                 {
-                    Console.WriteLine(date);
+                    Console.WriteLine(date); //выводит в консоль.
                 }
             }
         }
