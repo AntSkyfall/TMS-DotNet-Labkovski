@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator if else", "src\C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cycle While", "src\Cycle While\Cycle While.csproj", "{432F5D0D-0519-4E4C-9811-321B7CE7AFB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1", "src\ConsoleApp1\1.csproj", "{2B4EFF73-FD3B-4EDC-873E-FD05AA18367F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1", "src\ConsoleApp1\1.csproj", "{2B4EFF73-FD3B-4EDC-873E-FD05AA18367F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cycle for triangle", "src\Cycle for triangle\Cycle for triangle.csproj", "{E5F41F90-460A-434F-8797-311FA370CC36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{2B4EFF73-FD3B-4EDC-873E-FD05AA18367F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B4EFF73-FD3B-4EDC-873E-FD05AA18367F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B4EFF73-FD3B-4EDC-873E-FD05AA18367F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5F41F90-460A-434F-8797-311FA370CC36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5F41F90-460A-434F-8797-311FA370CC36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5F41F90-460A-434F-8797-311FA370CC36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5F41F90-460A-434F-8797-311FA370CC36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

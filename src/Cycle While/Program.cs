@@ -5,20 +5,32 @@ namespace Cycle_While
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) // Считает количество четных и нечетных чисел в определенном диапазоне
         {
-            uint oddNumberCount = 0;
-            uint evenNumberCount = 0;
-                Console.WriteLine("imput value");
+            int oddNumberCount = 0;
+            int evenNumberCount = 0;
+                Console.WriteLine("imput the lower range");
             int firstValue = int.Parse(Console.ReadLine());
-            while (Count < firstValue)
+
+            Console.WriteLine("imput the limit range");
+            int secondValue = int.Parse(Console.ReadLine());
+
+            while (firstValue <= secondValue)
             {
-                Count++;
-                if (Count % 2 == 0)
-                    Console.WriteLine(Count + " even");
+                if (firstValue % 2 == 0)
+                {
+                    evenNumberCount++;
+                }
+
                 else
-                    Console.WriteLine(Count + " not even");
+                {
+                    oddNumberCount++;
+                }
+
+                firstValue++;
             }
+            Console.WriteLine(evenNumberCount + " Even");
+            Console.WriteLine(oddNumberCount + "Odd");
         }
     }
 }
