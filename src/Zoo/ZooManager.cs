@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Zoo
 {
-    public class ZooManager : IManager
+    public class ZooManager : IZooManager
     {
         public List<AnimalBase<string>> animals = new List<AnimalBase<string>>();
 
-        public void show()
+        public void Show()
         {
             foreach (var animal in animals)
             {

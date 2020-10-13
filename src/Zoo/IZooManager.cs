@@ -4,8 +4,10 @@ using System.Text;
 
 namespace Zoo
 {
-    public interface IManager
+    public interface IZooManager
     {
         List<AnimalBase<int>> Animals { get; set; }
+
+        void Show();
     }
 }
