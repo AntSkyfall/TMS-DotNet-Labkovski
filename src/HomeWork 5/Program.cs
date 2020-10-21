@@ -8,7 +8,8 @@ namespace HomeWork_5
         static void Main(string[] args)
         {
             Account account = new Account(0);
-            account.RegisterHandler(new Account.AccountStateHandler(Show_message));
+            account.Added += AddedMessage;
+            account.Witchdrawn += WitchdrawMessage;
 
             Console.WriteLine("Deposit amount: ");
             int Deposit = int.Parse(Console.ReadLine());
@@ -21,9 +22,17 @@ namespace HomeWork_5
             Console.WriteLine($"On account sum: { account.Sum}");
             Console.ReadLine();
         }
-        private static void Show_message(String message)
+        private static void AddedMessage(String message)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(message);
+            Console.ResetColor();
+        }
+        private static void WitchdrawMessage(String message)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(message);
+            Console.ResetColor();
         }
     }
 }

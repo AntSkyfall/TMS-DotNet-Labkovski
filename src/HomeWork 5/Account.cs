@@ -8,12 +8,10 @@ namespace HomeWork_5
     {
         public delegate void AccountStateHandler(string message);
 
-        AccountStateHandler _del;
+        public event AccountStateHandler Added;
+        public event AccountStateHandler Witchdrawn;
 
-        public void RegisterHandler(AccountStateHandler del)
-        {
-            _del = del;
-        }
+        //public void RegisterHandler(AccountStateHandler del)
 
         public Account(int sum)
         {
@@ -24,8 +22,8 @@ namespace HomeWork_5
         {
             Sum += sum;
 
-            if (_del != null)
-                _del($"It came to the account {sum}");
+            if (Added != null)
+                Added($"It came to the account {sum}");
         }
 
         public void Witchdraw (int sum)
@@ -34,13 +32,13 @@ namespace HomeWork_5
             {
                 Sum -= sum;
 
-                if (_del != null)
-                    _del($"Sum {sum} Withdrawn from the account");
+                if (Witchdrawn != null)
+                    Witchdrawn($"Sum {sum} Withdrawn from the account");
             }
             else
             {
-                if (_del != null)
-                    _del($"Not enough money in the account");
+                if (Witchdrawn != null)
+                    Witchdrawn($"Not enough money in the account");
             }
         }
     }
