@@ -348,3 +348,9 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/src/Home Work 4 Zoo/Program.cs
+/src/Home Work 4 Zoo/IZoo.cs
+/src/Home Work 4 Zoo/Home Work 4 Zoo.csproj
+/src/Home Work 4 Zoo/Dogs.cs
+/src/Home Work 4 Zoo/Cats.cs
+/src/Home Work 4 Zoo/AnimalBase.cs

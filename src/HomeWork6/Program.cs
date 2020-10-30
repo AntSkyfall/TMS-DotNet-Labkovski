@@ -17,7 +17,7 @@ namespace HomeWork6
             {
                 user.Go();
                 user.GetInfo();
-                Console.WriteLine($"Calories burned on an easy walk: {user.Calculation()}");
+                Console.WriteLine(user.Calculation());
             }
         }
 
