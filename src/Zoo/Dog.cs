@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Zoo
 {
-    public class Dog : AnimalBase<int>
+    public class Dog : AnimalBase<string>
     {
-        public void say()
+        public void Say()
         {
             Console.WriteLine("Gav - Gav");
         }

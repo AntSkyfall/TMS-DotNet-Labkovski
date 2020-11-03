@@ -6,7 +6,8 @@ namespace Zoo
 {
     public abstract class AnimalBase<T> //Абстрактный класс тут
     {
-        public string name { get; set; }
-        public T age { get; set; }
+        public T Name { get; set; }
+        public T Age { get; set; }
+        public T Weight { get; set; }
     }
 }

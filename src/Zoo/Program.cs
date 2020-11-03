@@ -7,19 +7,22 @@ namespace Zoo
     {
         static void Main(string[] args)
         {
-            Cat CatVasya = new Cat();
-            CatVasya.name = "Vasiliy";
-            CatVasya.age = 1;
+            Cat cats = new Cat();
+            cats.Name = "Vasiliy";
+            cats.Age = "1";
+            cats.Weight = "10";
 
-            Dog DogPetya = new Dog();
-            DogPetya.name = "Peter";
+            Dog dogs = new Dog();
+            dogs.Name = "Peter";
+            dogs.Age = "2";
+            dogs.Weight = "20";
 
             IZooManager zooManager= new ZooManager();
-            zooManager.Animals.Add(CatVasya);
-            zooManager.Animals.Add(DogPetya);
+            zooManager.Animals.Add(cats);
+            zooManager.Animals.Add(dogs);
 
-            CatVasya.say();
-            DogPetya.say();
+            cats.Say();
+            dogs.Say();
 
             zooManager.Show();
 

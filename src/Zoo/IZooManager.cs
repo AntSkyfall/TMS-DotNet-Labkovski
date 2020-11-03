@@ -6,8 +6,16 @@ namespace Zoo
 {
     public interface IZooManager
     {
-        List<AnimalBase<int>> Animals { get; set; }
+        List<AnimalBase<string>> Animals { get; set; }
 
-        void Show();
+        public void Show()
+        {
+            foreach (var animal in Animals)
+            {
+                Console.WriteLine(animal.Name);
+                Console.WriteLine(animal.Age);
+                Console.WriteLine(animal.Weight);
+            }
+        }
     }
 }
