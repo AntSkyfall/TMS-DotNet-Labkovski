@@ -12,7 +12,7 @@ namespace HomeWork6
 
             users.AddUser();
 
-            // Тут можно было использовать магию, но не хватило времени ее найти((
+
             foreach (User user in users.dataUser)
             {
                 user.Go();

@@ -16,10 +16,10 @@ namespace HomeWork6
             Console.Write("Enter the body mass:");
             string bodyMass = Console.ReadLine();
 
-            Console.Write("Enter the step length:");
-            string stepLength = Console.ReadLine();
+            Console.Write("Enter the heinght:");
+            var height = int.Parse(Console.ReadLine());
 
-            dataUser.Add(new User(name, bodyMass, stepLength));
+            dataUser.Add(new User(name, bodyMass, height));
         }
 
     }
